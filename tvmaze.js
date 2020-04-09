@@ -1,6 +1,6 @@
 //This function searches tvmaze api and sends the search term
 async function searchShows(query) {
-  const response = await axios.get(" http://api.tvmaze.com/search/shows", {
+  const response = await axios.get(" https://api.tvmaze.com/search/shows", {
     params: { q: query },
   });
 
@@ -62,7 +62,7 @@ async function getEpisodes(id) {
   //checks to see if we get an id if not we do not excute anything.
   if (!id) return;
   const response = await axios.get(
-    `http://api.tvmaze.com/shows/${id}/episodes`
+    `https://api.tvmaze.com/shows/${id}/episodes`
   );
   //returns the episode(s) object(s).
   return response.data;
